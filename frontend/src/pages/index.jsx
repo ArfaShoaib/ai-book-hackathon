@@ -32,7 +32,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          href="/ai_book/docs/intro"
+          href="/docs/intro"
           className="px-6 py-3 rounded-2xl text-lg font-semibold shadow-lg bg-blue-600 text-white hover:bg-blue-700"
         >
           Start Reading →
