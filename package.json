@@ -13,9 +13,7 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "devDependencies": {
-    "docusaurus": "^3.9.2"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">=20.0"
   }
