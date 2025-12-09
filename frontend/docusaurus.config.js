@@ -7,7 +7,7 @@ const config = {
  
 
   url: "https://ArfaShoaib.github.io",
-  baseUrl: "/ai_book/",
+  baseUrl: "/",
 
   organizationName: "ArfaShoaib",
   projectName: "ai_book",
