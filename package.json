@@ -1,0 +1,22 @@
+{
+  "name": "ai_hackathon",
+  "version": "1.0.0",
+  "description": "AI Engineering for Beginners - A Practical Guide",
+  "main": "index.js",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["docusaurus", "ai", "documentation", "book"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "docusaurus": "^3.9.2"
+  },
+  "engines": {
+    "node": ">=20.0"
+  }
+}
