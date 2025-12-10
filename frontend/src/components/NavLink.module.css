@@ -1,0 +1,155 @@
+/* NavLink Component Styles */
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(210, 210, 210, 0.8);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  background: rgba(30, 30, 30, 0.5);
+}
+
+.navLink:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 102, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.2);
+}
+
+/* Active state */
+.navLink.active {
+  color: hsl(217, 91%, 60%);
+  background: rgba(0, 102, 255, 0.25);
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.25);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(217, 91%, 60%), hsl(199, 89%, 48%));
+  border-radius: 1px;
+}
+
+/* Pending state */
+.navLink.pending {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.navLink.pending::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Focus visible for accessibility */
+.navLink:focus-visible {
+  outline: 2px solid hsl(217, 91%, 60%);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navLink {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navLink {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .navLink.active::after {
+    left: 0.3rem;
+    right: 0.3rem;
+    height: 1.5px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .navLink {
+    transition: none;
+  }
+
+  .navLink.pending::before {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .navLink {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .navLink:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .navLink.active {
+    color: hsl(217, 91%, 60%);
+  }
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  .navLink {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .navLink:hover {
+    color: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 102, 255, 0.08);
+  }
+
+  .navLink.active {
+    color: hsl(217, 91%, 50%);
+    background: rgba(0, 102, 255, 0.12);
+  }
+
+  .navLink.pending::before {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.08),
+      transparent
+    );
+  }
+}

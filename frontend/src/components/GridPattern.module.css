@@ -1,0 +1,298 @@
+/* GridPattern Component Styles */
+
+.gridPatternContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Animated primary grid */
+.primaryGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(to right, hsla(217, 91%, 60%, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(217, 91%, 60%, 0.3) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: slideGrid 20s linear infinite;
+}
+
+@keyframes slideGrid {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 80px 80px;
+  }
+}
+
+/* Secondary fine grid for depth */
+.secondaryGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image:
+    linear-gradient(to right, hsla(199, 89%, 48%, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(199, 89%, 48%, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Animated diagonal lines */
+.diagonalGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image:
+    linear-gradient(45deg, hsla(217, 91%, 60%, 0.2) 1px, transparent 1px),
+    linear-gradient(-45deg, hsla(199, 89%, 48%, 0.2) 1px, transparent 1px);
+  background-size: 120px 120px;
+  animation: slideDiagonal 30s linear infinite;
+}
+
+@keyframes slideDiagonal {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 120px 120px;
+  }
+}
+
+/* Radial gradient glow effect - moves with mouse */
+.mouseGlow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  background: radial-gradient(circle, hsla(217, 91%, 60%, 0.15) 0%, transparent 70%);
+  will-change: transform;
+}
+
+/* Animated accent glow */
+.accentGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  background: radial-gradient(circle, hsla(199, 89%, 48%, 0.12) 0%, transparent 70%);
+  animation: accentPulse 15s ease-in-out infinite;
+}
+
+@keyframes accentPulse {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(100px, -100px) scale(1.1);
+  }
+  50% {
+    transform: translate(-100px, 100px) scale(0.9);
+  }
+  75% {
+    transform: translate(100px, 100px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Pulsing center glow */
+.centerGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  filter: blur(60px);
+  background: radial-gradient(circle, hsla(217, 91%, 60%, 0.08) 0%, transparent 70%);
+  animation: centerPulse 8s ease-in-out infinite;
+}
+
+@keyframes centerPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Animated dots container */
+.dotsContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: hsla(217, 91%, 60%, 0.2);
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+.dot:nth-child(1) {
+  left: 12.5%;
+  top: 12.5%;
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  left: 37.5%;
+  top: 12.5%;
+  animation-duration: 3.2s;
+  animation-delay: 0.15s;
+}
+
+.dot:nth-child(3) {
+  left: 62.5%;
+  top: 12.5%;
+  animation-duration: 3.4s;
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(4) {
+  left: 87.5%;
+  top: 12.5%;
+  animation-duration: 3.6s;
+  animation-delay: 0.45s;
+}
+
+.dot:nth-child(5) {
+  left: 12.5%;
+  top: 37.5%;
+  animation-duration: 3.8s;
+  animation-delay: 0.6s;
+}
+
+.dot:nth-child(6) {
+  left: 37.5%;
+  top: 37.5%;
+  animation-duration: 4s;
+  animation-delay: 0.75s;
+}
+
+.dot:nth-child(7) {
+  left: 62.5%;
+  top: 37.5%;
+  animation-duration: 4.2s;
+  animation-delay: 0.9s;
+}
+
+.dot:nth-child(8) {
+  left: 87.5%;
+  top: 37.5%;
+  animation-duration: 4.4s;
+  animation-delay: 1.05s;
+}
+
+.dot:nth-child(9) {
+  left: 12.5%;
+  top: 62.5%;
+  animation-duration: 4.6s;
+  animation-delay: 1.2s;
+}
+
+.dot:nth-child(10) {
+  left: 37.5%;
+  top: 62.5%;
+  animation-duration: 4.8s;
+  animation-delay: 1.35s;
+}
+
+.dot:nth-child(11) {
+  left: 62.5%;
+  top: 62.5%;
+  animation-duration: 5s;
+  animation-delay: 1.5s;
+}
+
+.dot:nth-child(12) {
+  left: 87.5%;
+  top: 62.5%;
+  animation-duration: 5.2s;
+  animation-delay: 1.65s;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.8;
+  }
+}
+
+/* Main gradient overlay */
+.mainGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    hsla(217, 91%, 60%, 0.15) 0%,
+    hsla(199, 89%, 48%, 0.05) 40%,
+    transparent 80%
+  );
+}
+
+/* Radial fade */
+.radialFade {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, hsl(222, 47%, 4%) 70%);
+}
+
+/* Top accent gradient */
+.topAccent {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsla(217, 91%, 60%, 0.05) 0%, transparent 50%);
+  animation: fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .primaryGrid,
+  .diagonalGrid,
+  .accentGlow,
+  .centerGlow,
+  .dot,
+  .topAccent {
+    animation: none !important;
+  }
+}
+
+/* GPU acceleration for smooth animations */
+.mouseGlow,
+.accentGlow,
+.centerGlow,
+.dot {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

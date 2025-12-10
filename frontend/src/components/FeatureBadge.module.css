@@ -1,0 +1,86 @@
+/* FeatureBadge Component Styles */
+
+.badge {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  will-change: transform, border-color;
+  transform: translateZ(0);
+}
+
+.badge:hover {
+  border-color: rgba(0, 102, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 8px 32px rgba(0, 102, 255, 0.1),
+    inset 0 0 32px rgba(255, 255, 255, 0.1);
+}
+
+.badgeContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.badgeIcon {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .badge {
+    padding: 0.5rem 1rem;
+  }
+
+  .badgeContent {
+    font-size: 0.8125rem;
+  }
+
+  .badgeIcon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .badgeContent {
+    font-size: 0.75rem;
+  }
+
+  .badgeIcon {
+    font-size: 0.875rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .badgeContent {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Accessibility improvements */
+.badge:focus-visible {
+  outline: 2px solid hsl(217, 91%, 60%);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    transition: none;
+  }
+}
